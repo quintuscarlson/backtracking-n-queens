@@ -24,3 +24,7 @@ board.printBoard()
 2. **Safety check:** Before placing, ensure no conflicts in the row, column, or diagonals.  
 3. **Recursion:** Move to the next column if the current placement is valid.  
 4. **Backtrack:** If no valid placement exists in a column, remove the previous queen and try the next row.  
+
+## Board Representation 
+`0` = empty square
+`1` = queen
