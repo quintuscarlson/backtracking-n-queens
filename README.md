@@ -10,11 +10,11 @@ A Python implementation of the classic N-Queens problem using recursive backtrac
 ## Usage 
 from n_queens_solver import ChessBoard
 
-# Initialize the chessboard
+*# Initialize the chessboard*
 board = ChessBoard()
 
-# Solve the 8-Queens problem
+*# Solve the 8-Queens problem*
 board.solve(0, 8)
 
-# Print the final board configuration
+*# Print the final board configuration*
 board.printBoard()
