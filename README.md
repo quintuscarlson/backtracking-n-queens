@@ -26,5 +26,14 @@ board.printBoard()
 4. **Backtrack:** If no valid placement exists in a column, remove the previous queen and try the next row.  
 
 ## Board Representation 
-`0` = empty square
-`1` = queen
+`0` = empty square  
+`1` = queen  
+Example 8×8 board after solving:  
+1 0 0 0 0 0 0 0   
+0 0 0 0 0 0 1 0   
+0 0 0 0 1 0 0 0   
+0 0 0 0 0 0 0 1   
+0 1 0 0 0 0 0 0   
+0 0 0 1 0 0 0 0   
+0 0 0 0 0 1 0 0   
+0 0 1 0 0 0 0 0   
