@@ -39,3 +39,9 @@ Example 8×8 board after solving:
 0  0  0  0  0  1  0  0   
 0  0  1  0  0  0  0  0
 ``` 
+
+## Requirements 
+- Python 3.x
+
+## Liscense
+This project is open source and available under the MIT License.
