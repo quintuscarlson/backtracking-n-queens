@@ -18,3 +18,9 @@ board.solve(0, 8)
   
 *# Print the final board configuration*  
 board.printBoard()  
+
+## How it Works
+1. **Backtracking:** Place queens one column at a time.  
+2. **Safety check:** Before placing, ensure no conflicts in the row, column, or diagonals.  
+3. **Recursion:** Move to the next column if the current placement is valid.  
+4. **Backtrack:** If no valid placement exists in a column, remove the previous queen and try the next row.  
