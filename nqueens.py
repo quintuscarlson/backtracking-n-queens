@@ -1,8 +1,8 @@
 class chessBoard:
 
-##class definition, create a 8x8 list of 0s to begin
-    def __init__(self):
-        self.boardLayout = [[0 for _ in range(8)] for _ in range(8)]
+##class definition, create a nxn list of 0s to begin
+    def __init__(self, n):
+        self.boardLayout = [[0 for _ in range(n)] for _ in range(n)]
 
 ##function to print the contents of the chess boardLayout to the console
     def printBoard(self):
@@ -30,13 +30,13 @@ class chessBoard:
             if row-k >= 0 and column-k >= 0:
                 if self.boardLayout[row-k][column-k] == 1:
                     check = False
-            if row+k <= 7 and column-k >= 0:
+            if row+k <= len(self.boardLayout)-1 and column-k >= 0:
                 if self.boardLayout[row+k][column-k] == 1:
                     check = False
-            if row-k >= 0 and column+k <= 7:
+            if row-k >= 0 and column+k <= len(self.boardLayout)-1:
                 if self.boardLayout[row-k][column+k] == 1:
                     check = False
-            if row+k <= 7 and column+k <= 7:
+            if row+k <= len(self.boardLayout)-1 and column+k <= len(self.boardLayout)-1:
                 if self.boardLayout[row+k][column+k] == 1:
                     check = False
 
@@ -44,14 +44,14 @@ class chessBoard:
 
 
 ##recurive solve function
-    def solve(self, column, n):
+    def solve(self, column, k):
 
         ##end function if n is out of the range of possible solutions
-        if not 0 <= n <= 8:
+        if not 0 <= k <= len(self.boardLayout):
             return False
 
         ##end recursion if column is equal to 8 meaning every column has a queen in it
-        if column == n:
+        if column == k:
                 return True
 
         ##loop through each row in the paramter column   
@@ -61,7 +61,7 @@ class chessBoard:
             if self.isSafe(row, column):
                 self.boardLayout[row][column] = 1
                 ##next check recursively if you can place a queen in the next column, if not undo the queen you placed in this iteration of the forloop by setting the position back to zero
-                if self.solve(column + 1, n):
+                if self.solve(column + 1, k):
                     return True
                 self.boardLayout[row][column] = 0
                
@@ -71,12 +71,11 @@ class chessBoard:
 
 
 ##main function to test the code
-test = chessBoard()
+test = chessBoard(12)
 
 test.printBoard()
 
-test.solve(0, 8)
+test.solve(0, 12)
 print()
 
 test.printBoard()
-
